@@ -4,10 +4,57 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/themes/light.css" />
+    <script type="module"
+      src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.16.0/cdn/shoelace.js"></script>
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <!-- Example 1: Live Validation with Browser Error -->
+      <sl-validate
+        live>
+        <sl-input label="Inline Error on Input" type="email"
+          required></sl-input>
+        <div slot="icon">⚠️</div>
+      </sl-validate>
+
+      <br><br>
+
+      <!-- Example 2: Live Validation with Inline Error -->
+      <sl-validate
+        live
+        inline>
+        <sl-input label="Live Validation on Input with Inline Error"
+          type="email" required></sl-input>
+        <div slot="icon">⚠️</div>
+      </sl-validate>
+
+      <br><br>
+
+      <!-- Example 3: Custom Validity with Browser Error -->
+      <sl-validate
+        custom-validity="This field is really very required."
+        live>
+        <sl-input label="Default Browser Validation with Custom Validity"
+          type="text" required></sl-input>
+        <div slot="icon">⚠️</div>
+      </sl-validate>
+
+      <br><br>
+
+      <!-- Example 4: Custom Validity with Inline Error -->
+      <sl-validate
+        custom-validity="This field is really very required."
+        inline
+        live>
+        <sl-input label="Default Browser Validation with Custom Validity"
+          type="text" required></sl-input>
+        <div slot="icon">⚠️</div>
+      </sl-validate>
+    </div>
     <script type="module" src="/main.js"></script>
+
   </body>
 </html>
